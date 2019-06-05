@@ -53,6 +53,9 @@ app.post('/promedioResult',(req,res)=>{
     });
 });
 
+app.get('/crearCurso',(req,res)=>{
+    res.render('crearCurso');
+});
 
 
 app.get('*',(req,res)=>{ 

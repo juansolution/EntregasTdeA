@@ -1,38 +1,17 @@
 <html>
-    {{>header}}
+{{>header}}
+<form action="/promedioResult" method="POST">
+    <label >Nombre</label>
+    <input type="text" name="nombre">
+    <label >Nota1:</label>
+    <input type="text" name="nota1">
+    <label for="">Nota2</label>
+    <input type="text" name="nota2">
+    <label for="">Nota3</label>
+    <input type="text" name="nota3">
+    <button>Ingresar nota</button>
+</form>
 
-<body>
-    <div class="content">
-        <div class="row">
-            <div class="col-sm-3">
-                <h1>Promedio Estudiantes</h1>
-            </div>
-            <div class="col-sm-3">
-                
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-3">
-                <table class="table table-striped table-hover">
-                    <thead class="thead-dark">
-                        <th>Nombre estudiante</th>
-                        <th>Nota1</th>
-                        <th>Nota2</th>
-                        <th>Nota2</th>
-                        <th>Promedio</th>
-                        <tr>
-                            <td>{{nombreestudiante}}</td>
-                            <td>{{nota1}}</td>
-                            <td>{{nota2}}</td>
-                            <td>{{nota3}}</td>
-                            <td>{{obtenerPromedio nota1 nota2 nota3}}</td>
-                        </tr>
-                    </thead>
+{{>footer}}
 
-                </table>
-            </div>
-        </div>
-        
-    </div>
-</body>
 </html>

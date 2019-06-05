@@ -1,21 +1,17 @@
 <html>
-    <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-            <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
-            <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
-              <!--Bootstrap css -->
-            <link rel="stylesheet" href="/css/bootstrap.min.css"  type="text/css">
-            <title>Curso Node JS</title>
-    </head>
+    {{>header}}
     <body>
-
-        <h1>Bienvenido: {{nusuario}}</h1>
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <footer>
-          <p> Todos los derecho reservados. </p>
-        </footer>
+        <div class="content-fluit">
+          <div class="row">
+            <div class="col-sm-2">
+              <h1>Bienvenido:</h1>
+            </div>
+            <div class="col-sm-2">
+              <h1>{{usuario}}</h1>
+            </div>
+          </div>
+        </div>
+        {{>toolsjs}}
+        {{>footer}}
     </body>
 </html>

@@ -31,7 +31,7 @@ hbs.registerPartials(dirpartials);
 
 app.get('/',(req,res)=>{
     res.render('index',{
-        nusuario : "J Piedrahita"
+        usuario: "Juan Piedrahita"
     });
 });
 
@@ -39,8 +39,12 @@ app.get('/testpartials',(req,res)=>{
     res.render('testpartial');
 });
 
-app.post('/promedios',(req,res)=>{
-    res.render('promedio',{
+app.get('/promedio',(req,res)=>{
+    res.render('promedio');
+});
+
+app.post('/promedioResult',(req,res)=>{
+    res.render('promedioResult',{
         nombreestudiante: req.body.nombre,
         nota1: parseInt(req.body.nota1),
         nota2: parseInt(req.body.nota2),
@@ -49,9 +53,7 @@ app.post('/promedios',(req,res)=>{
     });
 });
 
-app.get('/testform',(req,res)=>{
-    res.render('testform');
-});
+
 
 app.get('*',(req,res)=>{ 
     res.render('errorPage');

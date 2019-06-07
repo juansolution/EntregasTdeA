@@ -61,8 +61,13 @@ app.get('/verCurso',(req,res)=>{
     res.render('verCurso');
 });
 
+let listaCursos = [{code:1,nombre:"Node Js"},{code:2, nombre:"Angular"},{code:3,nombre:"net core"}];
+
+
+
 app.get('/InscribirEstudiante',(req,res)=>{
-    res.render('InscribirEstudiante');
+let listaCursos = [{code:1,nombre:"Node Js"},{code:2, nombre:"Angular"},{code:3,nombre:"net core"}];
+    res.render('InscribirEstudiante',{listaCursos});
 });
 
 app.get('/verInscrito',(req,res)=>{

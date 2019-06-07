@@ -1,17 +1,38 @@
 <html>
 {{>header}}
-<form action="/promedioResult" method="POST">
-    <label >Nombre</label>
-    <input type="text" name="nombre">
-    <label >Nota1:</label>
-    <input type="text" name="nota1">
-    <label for="">Nota2</label>
-    <input type="text" name="nota2">
-    <label for="">Nota3</label>
-    <input type="text" name="nota3">
-    <button>Ingresar nota</button>
-</form>
 
-{{>footer}}
+<body>
+    {{>navMenu}}
+    <div class="container">
+        
+        <form action="/promedioResult" method="POST">
+            <div class="form-group">
+                <label >Nombre:</label>
+                <input type="text" class="form-control" name="nombre">
+            </div>
+            <div class="form-group">
+                <label >Nota1:</label>
+                <input type="text"  class="form-control" name="nota1">
+            </div>
+            <div class="form-group">
+                <label for="">Nota2:</label>
+                <input type="text" class="form-control" name="nota2">
+            </div>    
+            <div class="form-group">
+                <label for="">Nota3:</label>
+                <input type="text" class="form-control" name="nota3">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary" >Ingresar nota</button>
+            <div class="form-group">
+            </div>
+            
+        </form>
+    
+    </div>
+    {{>toolsjs}}
+    {{>footer}}
+</body>
+
 
 </html>

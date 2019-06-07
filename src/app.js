@@ -57,10 +57,22 @@ app.get('/crearCurso',(req,res)=>{
     res.render('crearCurso');
 });
 
+app.get('/verCurso',(req,res)=>{
+    res.render('verCurso');
+});
+
+app.get('/InscribirEstudiante',(req,res)=>{
+    res.render('InscribirEstudiante');
+});
+
+app.get('/verInscrito',(req,res)=>{
+    res.render('verInscrito');
+});
+
 
 app.get('*',(req,res)=>{ 
     res.render('errorPage');
 
  });
 
-app.listen(3001,()=>{console.log("Aplicacion iniciada por el puerto 3001...")});
+app.listen(3001,()=>{console.log("Aplicacion iniciada por el puerto: 3001...")});

@@ -10,11 +10,19 @@
         </div>
         <div class="row">
             <div class="col-sm-3">
-                <table class="table">
-                    <thead>Nombre curso</thead>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Codigo Curso</th>
+                            <th scope="col">Nombre Curso</th>
+                        </tr>
+                    </thead>
+                     {{#each listaCursos}}
                     <tr>
-                        <td>Node Js</td>
+                        <td>{{id}}</td>
+                        <td >{{nombre}}</td>
                     </tr>
+                    {{/each}}
                 </table>
             </div>
         </div>

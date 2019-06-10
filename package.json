@@ -23,7 +23,8 @@
     "hbs": "^4.0.4",
     "jquery": "^3.4.1",
     "path": "^0.12.7",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.15.0",
+    "shortid": "^2.2.14"
   },
   "devDependencies": {}
 }

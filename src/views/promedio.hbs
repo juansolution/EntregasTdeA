@@ -11,8 +11,7 @@
         </div>
     </div>
     <div class="container">
-        
-        <form action="./promedioResult" method="POST">
+        <form action="../promedioResult" role="form" class="form-horizontal" method="POST">
             <div class="form-group">
                 <label >Nombre:</label>
                 <input type="text" class="form-control" name="nombre">
@@ -22,28 +21,23 @@
                 <input type="text"  class="form-control" name="nota1">
             </div>
             <div class="form-group">
-                <label for="">Nota2:</label>
+                <label>Nota2:</label>
                 <input type="text" class="form-control" name="nota2">
             </div>    
             <div class="form-group">
-                <label for="">Nota3:</label>
+                <label>Nota3:</label>
                 <input type="text" class="form-control" name="nota3">
             </div>
-           
-                <button type="button" class="btn btn-primary" >Ingresar nota</button>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10" >
+                    <button type="button submit" class="btn btn-primary" >Ingresar nota</button>
+                </div>
+            </div>
         </form>
     
     </div>
 
-<form action="/promedioResult">
-    <label >Nombre:</label>
-    <input type="text"  name="nombre">
-    <button type="button" >Ingresar nota</button>
-</form>
-
     {{>toolsjs}}
     {{>footer}}
 </body>
-
-
 </html>

@@ -59,11 +59,22 @@ app.get('/crearCurso',(req,res)=>{
     res.render('crearCurso');
 });
 
-app.post('/crearCursoResult'),(req,res)=>{
-    res.render('RespuestaExitosa',{resultado:"Crear Curso."});
-};
-
-
+app.post('/crearCursoResult',(req,res)=>{
+    console.log("Entre");
+    let nombre = req.body.nombre;
+    let duracion = req.body.duracion;
+    let costo = req.body.costo;
+    let horario = req.body.horario;
+    let curso = new cursos.curso(nombre,duracion,costo,horario);
+    try{
+        cursos.createCurso(curso);
+        res.render('RespuestaExitosa',{resultado:"El curso se creo correctamente"});
+    }
+    catch{
+        res.render('errorPage');
+    }
+    
+});
 
 app.get('/verCurso',(req,res)=>{
     res.render('verCurso',{
@@ -74,6 +85,10 @@ app.get('/verCurso',(req,res)=>{
 app.get('/InscribirEstudiante',(req,res)=>{
 
     res.render('InscribirEstudiante',{listaCursos});
+});
+
+app.post('/ResultInscribirEstudiante',(req,res)=>{
+    res.render('RespuestaExitosa');
 });
 
 app.get('/verInscrito',(req,res)=>{

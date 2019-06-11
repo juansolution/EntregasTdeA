@@ -11,7 +11,7 @@
         
     </div>
     <div class="container">
-        <form action="">
+        <form action="./ResultInscribirEstudiante">
             <div class="form-group">
                 <label for="">Nombre:</label>
                 <input type="text" class="form-control" name="nombre">
@@ -22,16 +22,21 @@
             </div>
             <div class="form-group">
                 <label for="">tipo de indentificacio:</label>
-                <input type="text" class="form-control" name="tidentificacion">
+                <select name="tipoIdentificacion" class="form-control" >
+                    <option value="" selected></option>
+                    <option value="cedula de ciudadania">cedula de ciudadania</option>
+                    <option value="Documento Extrajeria">Documento extrajeria</option>
+                    <option value="Tarjeta de Identidad" >Tarjeta de Identidad</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="">Numero identificacion:</label>
                 <input type="text" class="form-control" name="nIdentificacion">
             </div>
-            <!--<div class="form-group">
-                <label for="">Codigo del curso:</label>
-                <input type="text" class="form-control" name="codigoCurso">
-            </div>-->
+            <div class="form-group">
+                <label for="">Correo electronico</label>
+                <input type="email" class="form-control" name="nIdentificacion">
+            </div>
             <div class="form-group">
                 <label for="listaCursos">Seleccione el curso:</label>
                 <select name="cursoselect" class="form-control" id="cursoselect">
@@ -40,7 +45,7 @@
                    {{/each}}
                 </select>
             </div>
-            <button class="btn btn-primary">Inscribir</button>
+            <button type="button submit" class="btn btn-primary">Inscribir</button>
         </form>
     </div>
     {{>footer}}

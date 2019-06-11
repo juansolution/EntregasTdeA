@@ -7,11 +7,14 @@ let listacursos = [];
 
 class curso{
     
-    constructor(nombre, duracion)
+    constructor(nombre, duracion, costo, horario)
     {   
         if(nombre) this.id = shortid.generate();
         this.nombre = nombre;
         this.duracion = duracion;
+        this.costo = costo;
+        this.horario = horario;
+
     }
 }
 
@@ -59,16 +62,20 @@ let createCurso = (curso)=>{
     if(listacursos.length>0){
         dateout = JSON.stringify(listacursos);
         
+        console.log(dateout);
 
-        fs.writeFile('../Infrastructure/json/cursos.json',dateout,(error)=>{
+        
+        fs.writeFile('./Infrastructure/json/cursos.json',dateout,(error)=>{
             console.log(error);
             if(error){ 
-                throw new Error("No se pudo insertar el curso")
+                
+                throw new Error("No se pudo insertar el curso");
             }else{
-                console.log("Curso gurdado correctamente.")
-            };
+                console.log("Curso gurdado correctamente.");
+            }
 
-        }); 
+        });
+         
     }
 }
 
@@ -83,7 +90,9 @@ module.exports={
     curso,
     getCursos,
     searchCursoxid,
-    searchCursoxnombre
+    searchCursoxnombre,
+    createCurso
 
-    
-}
+};
+
+

@@ -88,11 +88,12 @@ app.get('/InscribirEstudiante',(req,res)=>{
 });
 
 app.post('/ResultInscribirEstudiante',(req,res)=>{
-    res.render('RespuestaExitosa');
+    
+    res.render('RespuestaExitosa',{resultado:"Se pudo inscribir correctamente el curso."});
 });
 
 app.get('/verInscrito',(req,res)=>{
-    res.render('verInscrito');
+    res.render('verInscrito',{});
 });
 
 app.get("/api",(req,res)=>{

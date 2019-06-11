@@ -20,10 +20,7 @@ app.use('/js', express.static(dirmodules + '/popper.js/dist'));
 app.use('/js', express.static(dirmodules + '/bootstrap/dist/js'));
 app.use(bodyparser.urlencoded({extended:false}));
 
-
-
 /* se llama al engine view y se le settea que va ser hbs  */
-
 app.set('view engine', 'hbs');
 
 /* Registre las partials*/
@@ -32,6 +29,7 @@ hbs.registerPartials(dirpartials);
 
 /* Variables */
 let listaCursos  = cursos.getCursos();//[{code:1,nombre:"Node Js"},{code:2, nombre:"Angular"},{code:3,nombre:"net core"}];
+
 
 
 app.get('/',(req,res)=>{
@@ -61,14 +59,17 @@ app.get('/crearCurso',(req,res)=>{
     res.render('crearCurso');
 });
 
+app.post('/crearCursoResult'),(req,res)=>{
+    res.render('RespuestaExitosa',{resultado:"Crear Curso."});
+};
+
+
+
 app.get('/verCurso',(req,res)=>{
     res.render('verCurso',{
         listaCursos
     });
 });
-
-
-
 
 app.get('/InscribirEstudiante',(req,res)=>{
 

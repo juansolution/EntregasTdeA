@@ -8,18 +8,34 @@
                     <h1>Crear Curso:</h1>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    <form action="" method="POST" class="form">
-                        <div class="form-group">
-                            <label for="">id Curso</label>
-                            <input type="number" class="form-control" placeholder="identificador del Curso">
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">Crear Curso</button>
-                    </form>
-                </div>
+        </div>
+
+        <div class="container">
+            <form action="../crearCursoResult" method="POST" role="form" class="form-horizontal">
+            <div class="form-group">
+                <label >Nombre del curso:</label>
+                <input type="text" name="nombre" class="form-control">
             </div>
+            <div class="form-group">
+                <label >Duración del curso:</label>
+                <input type="text" name="duracion" class="form-control">
+            </div>
+            <div class="form-group">
+                <label >Costo del curso:</label>
+                <input type="text" name="costo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label >horario del curso:</label>
+                <select class="form-control" name="horario" id="">
+                    <option value="Mañana">Mañana</option>
+                    <option value="Tarde">Tarde</option>
+                    <option value="Noche">Noche</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="button submit" class="btn btn-primary">Crear curso</button>
+            </div>
+            </form>
         </div>
         
     {{>toolsjs}}

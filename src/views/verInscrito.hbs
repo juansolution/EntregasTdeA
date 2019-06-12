@@ -10,6 +10,19 @@
         </div>
         
     </div>
+    <div class="container">
+        <table class="table">
+            <thead>
+                <th>Nombre Estudiante</th>
+                
+            </thead>
+            <tr> 
+                {{#each listestudiantes as |estudiantes|}}
+                    <td>{{estudiantes.nombre}} {{estudiantes.apellido}}</td>
+                {{/each}}
+            </tr>
+        </table>
+    </div>
     {{>footer}}
     {{>toolsjs}}
 </body>

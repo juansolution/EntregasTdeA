@@ -98,12 +98,15 @@ app.post('/ResultInscribirEstudiante',(req,res)=>{
 
     let estudiante = new estudiantes.estudiante(nombre,apellido,tipoidentificacion,nidentificacion,correo,idcurso);
     estudiantes.createEstudiante(estudiante);
-      
+    
+    
     res.render('RespuestaExitosa',{resultado:"Se pudo inscribir correctamente el curso."});
 });
 
 app.get('/verInscrito',(req,res)=>{
-    res.render('verInscrito',{});
+    let listestudiantes = estudiantes.getstudiantes();
+    
+    res.render('verInscrito',{listestudiantes});
 });
 
 app.get("/api",(req,res)=>{

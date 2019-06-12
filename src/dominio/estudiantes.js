@@ -93,6 +93,7 @@ let searchEstudiante = (estudiante)=>{
 
 module.exports = {
     estudiante,
-    createEstudiante
+    createEstudiante,
+    getstudiantes
 
 }

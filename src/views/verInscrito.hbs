@@ -11,17 +11,28 @@
         
     </div>
     <div class="container">
-        <table class="table">
-            <thead>
-                <th>Nombre Estudiante</th>
-                
-            </thead>
-            <tr> 
-                {{#each listestudiantes as |estudiantes|}}
-                    <td>{{estudiantes.nombre}} {{estudiantes.apellido}}</td>
-                {{/each}}
-            </tr>
-        </table>
+        <div class="row">
+            <div class="col-8">
+                <table class="table table-bordered table-condensed table-striped table-hover">
+                    <thead>
+                        <th scope="col">Nombre Estudiante</th>
+                        <th scope="col">Identificación</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Cursos</th>
+                    </thead>
+                        {{#each listestudiantes as |estudiantes|}}
+                            <tr  class="table-row" data-href="http://tutorialsplane.com">
+                                <td>{{estudiantes.nombre}} {{estudiantes.apellido}}</td>
+                                <td>{{estudiantes.nidentificacion}}</td>
+                                <td>{{estudiantes.correo}}</td>
+                                <td >Ver</td>
+                            </tr>
+                            
+                        {{/each}}
+                    </table>
+            </div>
+        </div>
+        
     </div>
     {{>footer}}
     {{>toolsjs}}

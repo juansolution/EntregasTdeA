@@ -6,13 +6,14 @@ let listaEstudiantes = [];
 
 class estudiante {
     constructor(
-        nombre, apellido, idenfificacion, tipoIdentificacion, cursos)
+        nombre, apellido, tipoidentificacion, nidentificacion, correo, idcurso)
     {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.idenfificacion = idenfificacion;
-        this.tipoIdentificacion = tipoIdentificacion;
-        this.cursos = cursos;
+        this.tipoidentificacion = tipoidentificacion;
+        this.nidentificacion = nidentificacion;
+        this.correo = correo;
+        this.idcurso = idcurso;
         
     }
 
@@ -29,21 +30,25 @@ let getstudiantes = ()=>{
  
 let createEstudiante = (estudiante)=>{ 
     getstudiantes();
-    console.log(searchEstudiante(estudiante,(resp)=>{console.log(resp);}));
-    /*
-    if(searchEstudiante()){
-        console("El Estudiantes se encuentra inscrito");
+
+    
+    
+    let estado = searchEstudiante(estudiante);
+
+    
+    if(estado){
+        console.log("El Estudiantes se encuentra inscrito");
     }else{
         listaEstudiantes.push(estudiante);
         SaveLista(listaEstudiantes);
     }
-    */
+    
 };
 
 let SaveLista = (listaEstudiantes)=>{
     if(listaEstudiantes.length > 0){
         let dataout = JSON.stringify(listaEstudiantes);
-        fs.writeFile('../Infrastructure/json/estudiantes.json',dataout,(error)=>{
+        fs.writeFile('./Infrastructure/json/estudiantes.json',dataout,(error)=>{
             if(error){
                 throw new Error("No se pudo insertar el estudiante.");
             }
@@ -56,21 +61,19 @@ let SaveLista = (listaEstudiantes)=>{
 };
 
 
-let searchEstudiante = (estudiante,resp)=>{
+let searchEstudiante = (estudiante)=>{
     getstudiantes();
-
-    listaEstudiantes.find(estu => {
-        if( estu.idenfificacion == estudiante.idenfificacion ){
-            resp = true;
-            
-        }
-        else{
-            
-            resp = false;
-        }
-
-    });
+    let resp = false;
+    if(listaEstudiantes.length>0){
+        listaEstudiantes.find(estu => {
+            if( estu.idenfificacion == estudiante.idenfificacion ){
+                resp = true;
+                
+            }
+        });
+    }
     
+    return resp;
 
 };
 
@@ -83,8 +86,8 @@ let searchEstudiante = (estudiante,resp)=>{
 
 /*Pruebas Con CrearEstudiantes*/
 //let ListCursos =  cursos.getCursos();
-let es = new estudiante("Juan", "Piedrahita", 71293257,"Cedula",[]);
-createEstudiante(es);
+//let es = new estudiante("Juan", "Piedrahita", 71293257,"Cedula",[]);
+//createEstudiante(es);
 
 
 

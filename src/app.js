@@ -4,6 +4,7 @@ const path = require("path");
 const hbs = require("hbs");
 const bodyparser = require("body-parser");
 let cursos = require("./dominio/cursos");
+let estudiantes = require("./dominio/estudiantes");
 
 require("./helpers/helpers");
 //const exphbs = require('express-handlebars');
@@ -88,7 +89,16 @@ app.get('/InscribirEstudiante',(req,res)=>{
 });
 
 app.post('/ResultInscribirEstudiante',(req,res)=>{
-    
+    let nombre = req.body.nombre;
+    let apellido = req.body.apellido;
+    let tipoidentificacion = req.body.tipoidentificacion;
+    let nidentificacion = req.body.nIdentificacion
+    let correo = req.body.correo;
+    let idcurso = req.body.idcurso;
+
+    let estudiante = new estudiantes.estudiante(nombre,apellido,tipoidentificacion,nidentificacion,correo,idcurso);
+    estudiantes.createEstudiante(estudiante);
+      
     res.render('RespuestaExitosa',{resultado:"Se pudo inscribir correctamente el curso."});
 });
 
